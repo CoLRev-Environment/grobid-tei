@@ -1,0 +1,43 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: tests/data/.*\.tei\.xml$
+      - id: end-of-file-fixer
+        exclude: tests/data/.*\.tei\.xml$
+      - id: check-docstring-first
+      - id: check-json
+      - id: check-yaml
+      - id: check-toml
+      - id: debug-statements
+
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 26.1.0
+    hooks:
+      - id: black
+        language_version: python3
+        types: [python]
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.21.2
+    hooks:
+      - id: pyupgrade
+        args: [--py310-plus]
+        types: [python]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.14
+    hooks:
+      - id: ruff-check
+        args: [--fix, --exit-non-zero-on-fix]
+        types: [python]
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: uv run --extra test pytest
+        language: system
+        pass_filenames: false
+        always_run: true

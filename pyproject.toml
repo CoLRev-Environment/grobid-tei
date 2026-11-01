@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "grobid-tei"
+version = "0.1.0"
+description = "A standalone Python client and TEI parser for GROBID"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "grobid-tei contributors" }]
+dependencies = [
+    "defusedxml>=0.7.1",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/grobid_tei"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
