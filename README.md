@@ -1,4 +1,15 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/CoLRev-Environment/grobid-tei/refs/heads/main/docs/_static/grobid_tei_logo.svg" alt="grobid-tei logo" width="400">
+
 # grobid-tei
+
+[![PyPI - Version](https://img.shields.io/pypi/v/grobid-tei?color=blue)](https://pypi.org/project/grobid-tei/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/grobid-tei)
+[![License](https://img.shields.io/github/license/CoLRev-Environment/grobid-tei)](https://github.com/CoLRev-Environment/grobid-tei/blob/main/LICENSE)
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/CoLRev-Environment/grobid-tei/tests.yml?label=tests)](https://github.com/CoLRev-Environment/grobid-tei/actions/workflows/tests.yml)
+
+</div>
 
 `grobid-tei` is a reusable Python client for an independently managed GROBID
 service and a parser for its TEI XML output. It supports Python 3.10 and newer.
