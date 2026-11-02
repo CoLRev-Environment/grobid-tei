@@ -97,3 +97,7 @@ for paragraph in document.iter_paragraphs():
 The parser uses `defusedxml` for safe XML parsing. `annotate_reference_ids()`
 applies only a caller-supplied mapping from TEI IDs to caller IDs; it performs no
 reference matching or workflow decisions.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
