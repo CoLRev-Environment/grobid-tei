@@ -90,7 +90,11 @@ for paragraph in document.iter_paragraphs():
 ## Public API
 
 - `GrobidClient(service_url=..., timeout=180.0)` provides `is_available()`,
-  `version()`, and `process_fulltext(...)`.
+  `version()`, optional `check_compatibility()`, and `process_fulltext(...)`.
+  The compatibility check rejects known-incompatible versions and warns, but
+  proceeds, for versions not yet tested with this package. It is not run
+  automatically during processing. `IncompatibleGrobidVersionError` identifies
+  a known-incompatible server version.
 - `TEIDocument.from_bytes(...)` and `TEIDocument.from_file(...)` create a parsed
   document. It provides `to_bytes()`, `grobid_version()`, `metadata()`,
   `abstract()`, `keywords()`, `author_details()`, `references()`,

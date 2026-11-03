@@ -3,12 +3,16 @@
 from __future__ import annotations
 
 import math
+import warnings
 from pathlib import Path
 from urllib.parse import urlsplit
 
 import requests
 
-from grobid_tei.exceptions import GrobidServiceError
+from grobid_tei.exceptions import GrobidServiceError, IncompatibleGrobidVersionError
+
+_TESTED_GROBID_VERSIONS = frozenset({"0.8.2"})
+_INCOMPATIBLE_GROBID_VERSIONS: frozenset[str] = frozenset()
 
 
 class GrobidClient:
@@ -55,6 +59,25 @@ class GrobidClient:
         if not isinstance(version, str) or not version:
             raise GrobidServiceError(
                 f"GROBID returned no version from {self.service_url}"
+            )
+        return version
+
+    def check_compatibility(self) -> str:
+        """Check the server version before processing and return that version.
+
+        Known-incompatible versions raise :class:`IncompatibleGrobidVersionError`.
+        Versions not yet tested with this package emit a warning and are allowed.
+        This check is opt-in; it is not performed by :meth:`process_fulltext`.
+        """
+        version = self.version()
+        if version in _INCOMPATIBLE_GROBID_VERSIONS:
+            raise IncompatibleGrobidVersionError(version)
+        if version not in _TESTED_GROBID_VERSIONS:
+            warnings.warn(
+                f"GROBID version {version!r} has not been tested with grobid-tei; "
+                "processing will be attempted",
+                UserWarning,
+                stacklevel=2,
             )
         return version
 
