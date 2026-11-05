@@ -114,10 +114,11 @@ class TEIDocument:
         the abstract under the ``abstract`` key when present.
         """
         source = self._root.find(f".//{_TEI}sourceDesc/{_TEI}biblStruct")
-        if source is None:
-            return {}
-
-        fields = self._bibliographic_fields(source, document=True)
+        fields = (
+            self._bibliographic_fields(source, document=True)
+            if source is not None
+            else {}
+        )
         title = fields.get("title")
         if title:
             for suffix in (
