@@ -62,6 +62,7 @@ Path("paper.tei.xml").write_bytes(tei_xml)
 
 document = TEIDocument.from_bytes(tei_xml)
 print(document.metadata())
+print(document.metadata(abstract=True))
 print(document.abstract())
 print(document.references(include_citation_counts=True))
 ```

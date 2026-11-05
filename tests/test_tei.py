@@ -22,6 +22,10 @@ def test_document_metadata_and_header(document: TEIDocument) -> None:
         "title": "Debates and Perspectives Paper",
         "doi": "10.1177/02683962211048201",
     }
+    assert document.metadata(abstract=True) == {
+        **document.metadata(),
+        "abstract": document.abstract(),
+    }
     assert document.abstract() == (
         "Artificial intelligence (AI) is beginning to transform traditional research "
         "practices in many areas. In this context, literature reviews stand out because "
@@ -45,6 +49,23 @@ def test_document_metadata_and_header(document: TEIDocument) -> None:
         "automation",
         "literature review",
     ]
+
+
+def test_metadata_can_include_abstract_without_bibliographic_metadata() -> None:
+    document = TEIDocument.from_bytes(
+        b'<TEI xmlns="http://www.tei-c.org/ns/1.0">'
+        b"<teiHeader><profileDesc><abstract><p>Summary text.</p></abstract>"
+        b"</profileDesc></teiHeader></TEI>"
+    )
+
+    assert document.metadata() == {}
+    assert document.metadata(abstract=True) == {"abstract": "Summary text."}
+
+
+def test_metadata_omits_missing_abstract_when_requested() -> None:
+    document = TEIDocument.from_bytes(b'<TEI xmlns="http://www.tei-c.org/ns/1.0"/>')
+
+    assert document.metadata(abstract=True) == {}
 
 
 def test_authors_and_references(document: TEIDocument) -> None:

@@ -106,11 +106,12 @@ class TEIDocument:
             application = self._root.find(f".//{_TEI}application")
         return application.get("version") if application is not None else None
 
-    def metadata(self) -> dict[str, str]:
+    def metadata(self, *, abstract: bool = False) -> dict[str, str]:
         """Extract document-level bibliographic metadata.
 
         Keys are generic lowercase bibliography names such as ``title``,
-        ``author``, ``doi``, and ``entrytype``.
+        ``author``, ``doi``, and ``entrytype``. Set ``abstract=True`` to include
+        the abstract under the ``abstract`` key when present.
         """
         source = self._root.find(f".//{_TEI}sourceDesc/{_TEI}biblStruct")
         if source is None:
@@ -127,11 +128,14 @@ class TEIDocument:
             ):
                 title = title.replace(suffix, "")
             fields["title"] = title
-        return {
+        metadata = {
             key: self._clean_value(value)
             for key, value in fields.items()
             if self._clean_value(value)
         }
+        if abstract and (abstract_text := self.abstract()):
+            metadata["abstract"] = abstract_text
+        return metadata
 
     def abstract(self) -> str | None:
         """Return the abstract text, or ``None`` if the document has none."""
