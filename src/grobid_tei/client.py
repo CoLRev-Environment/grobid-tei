@@ -19,9 +19,17 @@ class GrobidClient:
     """Call a GROBID server at an explicitly configured URL.
 
     The client does not start, stop, or otherwise manage the server process.
+    By default, the server version is retrieved during initialization and
+    cached for this client instance. Set ``skip_version=True`` to defer lookup.
     """
 
-    def __init__(self, *, service_url: str, timeout: float = 180.0) -> None:
+    def __init__(
+        self,
+        *,
+        service_url: str,
+        timeout: float = 180.0,
+        skip_version: bool = False,
+    ) -> None:
         if not service_url or not isinstance(service_url, str):
             raise ValueError("service_url must be a non-empty HTTP(S) URL")
         parsed_url = urlsplit(service_url)
@@ -32,6 +40,9 @@ class GrobidClient:
 
         self.service_url = service_url.rstrip("/")
         self.timeout = float(timeout)
+        self._grobid_version: str | None = None
+        if not skip_version:
+            self.version()
 
     def is_available(self) -> bool:
         """Return whether the configured GROBID server reports itself alive."""
@@ -44,7 +55,10 @@ class GrobidClient:
             return False
 
     def version(self) -> str:
-        """Return the version reported by the configured GROBID server."""
+        """Return the cached version, retrieving it once if needed."""
+        if self._grobid_version is not None:
+            return self._grobid_version
+
         try:
             response = requests.get(
                 f"{self.service_url}/api/version", timeout=self.timeout
@@ -60,6 +74,7 @@ class GrobidClient:
             raise GrobidServiceError(
                 f"GROBID returned no version from {self.service_url}"
             )
+        self._grobid_version = version
         return version
 
     def check_compatibility(self) -> str:
@@ -67,7 +82,8 @@ class GrobidClient:
 
         Known-incompatible versions raise :class:`IncompatibleGrobidVersionError`.
         Versions not yet tested with this package emit a warning and are allowed.
-        This check is opt-in; it is not performed by :meth:`process_fulltext`.
+        This check is opt-in; it is not performed by processing methods.
+        The version lookup reuses the value cached during initialization, if any.
         """
         version = self.version()
         if version in _INCOMPATIBLE_GROBID_VERSIONS:

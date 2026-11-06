@@ -16,7 +16,9 @@ from grobid_tei import (
 
 
 def test_explicit_service_url_and_availability() -> None:
-    client = GrobidClient(service_url="http://grobid.example:8070/", timeout=12)
+    client = GrobidClient(
+        service_url="http://grobid.example:8070/", timeout=12, skip_version=True
+    )
     response = Mock(ok=True, text="true\n")
     with patch("grobid_tei.client.requests.get", return_value=response) as get:
         assert client.is_available()
@@ -24,13 +26,13 @@ def test_explicit_service_url_and_availability() -> None:
 
 
 def test_availability_reports_connection_failure_as_false() -> None:
-    client = GrobidClient(service_url="https://grobid.example")
+    client = GrobidClient(service_url="https://grobid.example", skip_version=True)
     with patch("grobid_tei.client.requests.get", side_effect=requests.ConnectionError):
         assert not client.is_available()
 
 
 def test_version() -> None:
-    client = GrobidClient(service_url="http://grobid.example")
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
     response = Mock()
     response.json.return_value = {"version": "0.8.2"}
     with patch("grobid_tei.client.requests.get", return_value=response) as get:
@@ -38,8 +40,59 @@ def test_version() -> None:
     get.assert_called_once_with("http://grobid.example/api/version", timeout=180.0)
 
 
+def test_initialization_discovers_and_caches_version() -> None:
+    response = Mock()
+    response.json.return_value = {"version": "0.8.2"}
+    with patch("grobid_tei.client.requests.get", return_value=response) as get:
+        client = GrobidClient(service_url="http://grobid.example", timeout=12)
+        assert client.version() == "0.8.2"
+        assert client.check_compatibility() == "0.8.2"
+
+    get.assert_called_once_with("http://grobid.example/api/version", timeout=12.0)
+
+
+def test_skip_version_defers_and_caches_lookup() -> None:
+    response = Mock()
+    response.json.return_value = {"version": "0.9.1"}
+    with patch("grobid_tei.client.requests.get", return_value=response) as get:
+        client = GrobidClient(service_url="http://grobid.example", skip_version=True)
+        get.assert_not_called()
+        assert client.version() == "0.9.1"
+        assert client.version() == "0.9.1"
+
+    get.assert_called_once_with("http://grobid.example/api/version", timeout=180.0)
+
+
+def test_each_client_discovers_its_own_server_version() -> None:
+    first_response = Mock()
+    first_response.json.return_value = {"version": "0.8.2"}
+    second_response = Mock()
+    second_response.json.return_value = {"version": "0.9.1"}
+    with patch(
+        "grobid_tei.client.requests.get",
+        side_effect=[first_response, second_response],
+    ) as get:
+        first_client = GrobidClient(service_url="http://first.example")
+        second_client = GrobidClient(service_url="http://second.example")
+
+    assert first_client.version() == "0.8.2"
+    assert second_client.version() == "0.9.1"
+    assert get.call_count == 2
+
+
+def test_initialization_version_failure_is_a_service_error() -> None:
+    with (
+        patch(
+            "grobid_tei.client.requests.get",
+            side_effect=requests.ConnectionError("offline"),
+        ),
+        pytest.raises(GrobidServiceError, match="Could not retrieve"),
+    ):
+        GrobidClient(service_url="http://grobid.example")
+
+
 def test_version_errors_are_package_exceptions() -> None:
-    client = GrobidClient(service_url="http://grobid.example")
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
     with patch(
         "grobid_tei.client.requests.get",
         side_effect=requests.ConnectionError("offline"),
@@ -49,7 +102,7 @@ def test_version_errors_are_package_exceptions() -> None:
 
 
 def test_compatibility_check_accepts_tested_version_without_warning() -> None:
-    client = GrobidClient(service_url="http://grobid.example")
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
     with patch.object(client, "version", return_value="0.8.2"):
         with warnings.catch_warnings(record=True) as recorded:
             warnings.simplefilter("always")
@@ -58,7 +111,7 @@ def test_compatibility_check_accepts_tested_version_without_warning() -> None:
 
 
 def test_compatibility_check_warns_but_allows_untested_version() -> None:
-    client = GrobidClient(service_url="http://grobid.example")
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
     with patch.object(client, "version", return_value="0.9.0"):
         with pytest.warns(UserWarning, match="has not been tested"):
             assert client.check_compatibility() == "0.9.0"
@@ -70,7 +123,7 @@ def test_compatibility_check_rejects_known_incompatible_version(monkeypatch) -> 
     monkeypatch.setattr(
         client_module, "_INCOMPATIBLE_GROBID_VERSIONS", frozenset({"0.7.0"})
     )
-    client = GrobidClient(service_url="http://grobid.example")
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
     with patch.object(client, "version", return_value="0.7.0"):
         with pytest.raises(IncompatibleGrobidVersionError) as error:
             client.check_compatibility()
@@ -81,7 +134,9 @@ def test_process_fulltext_posts_pdf_and_options(tmp_path: Path) -> None:
     pdf = tmp_path / "paper.pdf"
     pdf.write_bytes(b"%PDF-1.7 sample")
     response = Mock(content=b"<TEI/>")
-    client = GrobidClient(service_url="http://grobid.example", timeout=25)
+    client = GrobidClient(
+        service_url="http://grobid.example", timeout=25, skip_version=True
+    )
 
     with patch("grobid_tei.client.requests.post", return_value=response) as post:
         assert (
@@ -102,7 +157,7 @@ def test_process_fulltext_posts_pdf_and_options(tmp_path: Path) -> None:
 
 
 def test_process_fulltext_service_error_and_missing_file(tmp_path: Path) -> None:
-    client = GrobidClient(service_url="http://grobid.example")
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
     with pytest.raises(FileNotFoundError):
         client.process_fulltext(tmp_path / "missing.pdf")
 
@@ -128,7 +183,9 @@ def test_process_citation_posts_form_and_returns_parseable_tei() -> None:
         b"</imprint></monogr></biblStruct>"
     )
     response = Mock(content=citation_xml)
-    client = GrobidClient(service_url="http://grobid.example/", timeout=25)
+    client = GrobidClient(
+        service_url="http://grobid.example/", timeout=25, skip_version=True
+    )
 
     with patch("grobid_tei.client.requests.post", return_value=response) as post:
         assert (
@@ -157,7 +214,7 @@ def test_process_citation_posts_form_and_returns_parseable_tei() -> None:
 
 
 def test_process_citation_defaults_to_no_consolidation() -> None:
-    client = GrobidClient(service_url="http://grobid.example")
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
     response = Mock(content=b"<biblStruct/>")
 
     with patch("grobid_tei.client.requests.post", return_value=response) as post:
@@ -168,20 +225,20 @@ def test_process_citation_defaults_to_no_consolidation() -> None:
 
 @pytest.mark.parametrize("citation", ["", " \t\n"])
 def test_process_citation_rejects_empty_input(citation: str) -> None:
-    client = GrobidClient(service_url="http://grobid.example")
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
     with pytest.raises(ValueError, match="citation must be a non-empty string"):
         client.process_citation(citation)
 
 
 @pytest.mark.parametrize("citation", [None, 42])
 def test_process_citation_rejects_non_string_input(citation: object) -> None:
-    client = GrobidClient(service_url="http://grobid.example")
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
     with pytest.raises(TypeError, match="citation must be a non-empty string"):
         client.process_citation(citation)  # type: ignore[arg-type]
 
 
 def test_process_citation_service_errors() -> None:
-    client = GrobidClient(service_url="http://grobid.example")
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
     with (
         patch(
             "grobid_tei.client.requests.post",

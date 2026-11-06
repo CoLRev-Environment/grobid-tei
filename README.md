@@ -65,7 +65,9 @@ curl http://localhost:8070/api/isalive
 ```
 
 When running Python on the same host, use `http://localhost:8070` as the
-`GrobidClient` service URL. Stop the container when finished with
+`GrobidClient` service URL. The service must be reachable when constructing a
+client because it discovers and caches the GROBID version by default. Pass
+`skip_version=True` to defer that lookup. Stop the container when finished with
 `docker stop grobid`.
 
 ## Convert a PDF to TEI
@@ -146,13 +148,18 @@ for paragraph in document.iter_paragraphs():
 
 ## Public API
 
-- `GrobidClient(service_url=..., timeout=180.0)` provides `is_available()`,
-  `version()`, optional `check_compatibility()`, `process_fulltext(...)`, and
-  `process_citation(...)`.
-  The compatibility check rejects known-incompatible versions and warns, but
-  proceeds, for versions not yet tested with this package. It is not run
-  automatically during processing. `IncompatibleGrobidVersionError` identifies
-  a known-incompatible server version.
+- `GrobidClient(service_url=..., timeout=180.0, skip_version=False)` discovers
+  and caches the server version at initialization by default. Set
+  `skip_version=True` to defer discovery until `version()` or
+  `check_compatibility()` is called. The cache belongs to that client instance;
+  create a new client to discover the version again. The client also provides
+  `is_available()`, `version()`, optional `check_compatibility()`,
+  `process_fulltext(...)`, and `process_citation(...)`.
+- `check_compatibility()` rejects known-incompatible versions and warns, but
+  proceeds, for versions not yet tested with this package. Compatibility
+  checking is not run automatically during processing.
+  `IncompatibleGrobidVersionError` identifies a known-incompatible server
+  version.
 - `TEIDocument.from_bytes(...)` and `TEIDocument.from_file(...)` create a parsed
   document. It provides `to_bytes()`, `grobid_version()`, `metadata()`,
   `abstract()`, `keywords()`, `author_details()`, `references()`,
