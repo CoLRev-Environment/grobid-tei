@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import math
 import warnings
+from collections.abc import Sequence
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -153,6 +154,41 @@ class GrobidClient:
         except requests.RequestException as exc:
             raise GrobidServiceError(
                 f"GROBID citation processing failed at {self.service_url}: {exc}"
+            ) from exc
+
+        return response.content
+
+    def process_citation_list(
+        self, citations: Sequence[str], *, consolidate_citations: bool = False
+    ) -> bytes:
+        """Parse multiple raw bibliographical citations and return TEI XML bytes."""
+        if isinstance(citations, (str, bytes)) or not isinstance(citations, Sequence):
+            raise TypeError("citations must be a non-empty sequence of strings")
+        if not citations:
+            raise ValueError("citations must be a non-empty sequence of strings")
+
+        form_data: list[tuple[str, str]] = []
+        for citation in citations:
+            if not isinstance(citation, str):
+                raise TypeError("each citation must be a non-empty string")
+            if not citation.strip():
+                raise ValueError("each citation must be a non-empty string")
+            form_data.append(("citations", citation))
+        form_data.append(
+            ("consolidateCitations", "1" if consolidate_citations else "0")
+        )
+
+        try:
+            response = requests.post(
+                f"{self.service_url}/api/processCitationList",
+                data=form_data,
+                headers={"Accept": "application/xml"},
+                timeout=self.timeout,
+            )
+            response.raise_for_status()
+        except requests.RequestException as exc:
+            raise GrobidServiceError(
+                f"GROBID citation list processing failed at {self.service_url}: {exc}"
             ) from exc
 
         return response.content

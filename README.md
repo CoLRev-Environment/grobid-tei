@@ -128,6 +128,33 @@ print(reference.fields)
 # }
 ```
 
+## Parse multiple raw citations
+
+Pass each reference separately to `process_citation_list`. It returns TEI XML
+bytes containing the parsed references, which can be extracted with
+`TEIDocument.references()`:
+
+```python
+from grobid_tei import GrobidClient, TEIDocument
+
+client = GrobidClient(service_url="http://localhost:8070")
+citations = [
+    "Venkatesh, V., Morris, M. G., Davis, G. B., & Davis, F. D. (2003). "
+    "User acceptance of information technology: Toward a unified view. "
+    "MIS Quarterly, 27(3), 425–478. https://doi.org/10.2307/30036540",
+    "Davis, F. D. (1989). Perceived usefulness, perceived ease of use, and "
+    "user acceptance of information technology. MIS Quarterly, 13(3), "
+    "319–340. https://doi.org/10.2307/249008",
+]
+citation_list_xml = client.process_citation_list(citations)
+citation_list_document = TEIDocument.from_bytes(citation_list_xml)
+for reference in citation_list_document.references():
+    print(reference.fields)
+```
+
+Citation consolidation is disabled by default; pass
+`consolidate_citations=True` to enable it for the list.
+
 ## Parse an existing TEI file
 
 No running GROBID service is needed to parse an existing file:
@@ -154,7 +181,8 @@ for paragraph in document.iter_paragraphs():
   `check_compatibility()` is called. The cache belongs to that client instance;
   create a new client to discover the version again. The client also provides
   `is_available()`, `version()`, optional `check_compatibility()`,
-  `process_fulltext(...)`, and `process_citation(...)`.
+  `process_fulltext(...)`, `process_citation(...)`, and
+  `process_citation_list(...)`.
 - `check_compatibility()` rejects known-incompatible versions and warns, but
   proceeds, for versions not yet tested with this package. Compatibility
   checking is not run automatically during processing.

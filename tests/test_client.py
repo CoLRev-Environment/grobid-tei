@@ -257,6 +257,122 @@ def test_process_citation_service_errors() -> None:
         client.process_citation("A. Author, A. Citation, 2024")
 
 
+def test_process_citation_list_posts_repeated_fields_and_returns_references() -> None:
+    citations = [
+        "First Author. First citation. Journal One, 1(2), 10-20 (2020).",
+        "Second Author. Second citation. Journal Two, 3(4), 30-40 (2021).",
+    ]
+    citation_list_xml = (
+        b'<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><back><div>'
+        b"<listBibl>"
+        b'<biblStruct xml:id="b0"><analytic><title>First citation</title>'
+        b'</analytic><monogr><title level="j">Journal One</title><imprint>'
+        b'<date when="2020"/></imprint></monogr></biblStruct>'
+        b'<biblStruct xml:id="b1"><analytic><title>Second citation</title>'
+        b'</analytic><monogr><title level="j">Journal Two</title><imprint>'
+        b'<date when="2021"/></imprint></monogr></biblStruct>'
+        b"</listBibl></div></back></text></TEI>"
+    )
+    response = Mock(content=citation_list_xml)
+    client = GrobidClient(
+        service_url="http://grobid.example/", timeout=25, skip_version=True
+    )
+
+    with patch("grobid_tei.client.requests.post", return_value=response) as post:
+        assert (
+            client.process_citation_list(citations, consolidate_citations=True)
+            == citation_list_xml
+        )
+
+    args, kwargs = post.call_args
+    assert args == ("http://grobid.example/api/processCitationList",)
+    assert kwargs["data"] == [
+        ("citations", citations[0]),
+        ("citations", citations[1]),
+        ("consolidateCitations", "1"),
+    ]
+    assert kwargs["headers"] == {"Accept": "application/xml"}
+    assert kwargs["timeout"] == 25.0
+
+    references = TEIDocument.from_bytes(citation_list_xml).references()
+    assert [reference.tei_id for reference in references] == ["b0", "b1"]
+    assert [reference["title"] for reference in references] == [
+        "First citation",
+        "Second citation",
+    ]
+    assert [reference["year"] for reference in references] == ["2020", "2021"]
+
+
+def test_process_citation_list_defaults_to_no_consolidation() -> None:
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
+    response = Mock(content=b"<TEI/>")
+
+    with patch("grobid_tei.client.requests.post", return_value=response) as post:
+        client.process_citation_list(["A. Author. A citation."])
+
+    assert post.call_args.kwargs["data"] == [
+        ("citations", "A. Author. A citation."),
+        ("consolidateCitations", "0"),
+    ]
+
+
+@pytest.mark.parametrize("citations", ["one citation", b"one citation", None, 42])
+def test_process_citation_list_rejects_non_sequences(citations: object) -> None:
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
+    with pytest.raises(TypeError, match="citations must be a non-empty sequence"):
+        client.process_citation_list(citations)  # type: ignore[arg-type]
+
+
+@pytest.mark.parametrize("citations", [[], ()])
+def test_process_citation_list_rejects_empty_sequences(citations) -> None:
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
+    with pytest.raises(ValueError, match="citations must be a non-empty sequence"):
+        client.process_citation_list(citations)
+
+
+@pytest.mark.parametrize(
+    ("citations", "error", "message"),
+    [
+        (
+            ["valid citation", "  "],
+            ValueError,
+            "each citation must be a non-empty string",
+        ),
+        (
+            ["valid citation", None],
+            TypeError,
+            "each citation must be a non-empty string",
+        ),
+    ],
+)
+def test_process_citation_list_rejects_invalid_items(
+    citations, error: type[Exception], message: str
+) -> None:
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
+    with pytest.raises(error, match=message):
+        client.process_citation_list(citations)
+
+
+def test_process_citation_list_service_errors() -> None:
+    client = GrobidClient(service_url="http://grobid.example", skip_version=True)
+    with (
+        patch(
+            "grobid_tei.client.requests.post",
+            side_effect=requests.ConnectionError("offline"),
+        ),
+        pytest.raises(GrobidServiceError, match="citation list processing failed"),
+    ):
+        client.process_citation_list(["A. Author. A citation."])
+
+    response = Mock()
+    response.raise_for_status.side_effect = requests.HTTPError("503 unavailable")
+    with (
+        patch("grobid_tei.client.requests.post", return_value=response),
+        pytest.raises(GrobidServiceError, match="503 unavailable"),
+    ):
+        client.process_citation_list(["A. Author. A citation."])
+
+
 @pytest.mark.parametrize("url", ["", "localhost:8070", "ftp://example.org", "/api"])
 def test_invalid_service_url_is_rejected(url: str) -> None:
     with pytest.raises(ValueError):
