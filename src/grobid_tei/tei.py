@@ -78,9 +78,14 @@ class TEIDocument:
         if b"[TIMEOUT]" in xml[:256]:
             raise TEIParsingError("GROBID reported a processing timeout")
         try:
-            return cls(DefusedET.fromstring(xml))
+            root = DefusedET.fromstring(xml)
         except (DefusedXmlException, DefusedET.ParseError, ValueError) as exc:
             raise TEIParsingError(f"Could not parse TEI XML: {exc}") from exc
+        if root.tag == "biblStruct":
+            for node in root.iter():
+                if not node.tag.startswith("{"):
+                    node.tag = _TEI + node.tag
+        return cls(root)
 
     @classmethod
     def from_file(cls, path: Path) -> TEIDocument:
@@ -197,20 +202,27 @@ class TEIDocument:
         exposed as ``TEIReference.in_text_citation_count``.
         """
         references: list[TEIReference] = []
-        for bibliography in self._root.iter(f"{_TEI}listBibl"):
-            for node in bibliography:
-                fields = self._bibliographic_fields(node)
-                tei_id = node.get(_XML_ID)
-                citation_count = None
-                if include_citation_counts:
-                    citation_count = self._citation_count(tei_id) if tei_id else 0
-                references.append(
-                    TEIReference(
-                        bibliographic_fields=fields,
-                        tei_id=tei_id,
-                        in_text_citation_count=citation_count,
-                    )
+        if self._root.tag == _TEI + "biblStruct":
+            reference_nodes = [self._root]
+        else:
+            reference_nodes = [
+                node
+                for bibliography in self._root.iter(f"{_TEI}listBibl")
+                for node in bibliography
+            ]
+        for node in reference_nodes:
+            fields = self._bibliographic_fields(node)
+            tei_id = node.get(_XML_ID)
+            citation_count = None
+            if include_citation_counts:
+                citation_count = self._citation_count(tei_id) if tei_id else 0
+            references.append(
+                TEIReference(
+                    bibliographic_fields=fields,
+                    tei_id=tei_id,
+                    in_text_citation_count=citation_count,
                 )
+            )
         return references
 
     def citations_by_section(self) -> dict[str, list[str]]:

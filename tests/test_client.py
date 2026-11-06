@@ -11,6 +11,7 @@ from grobid_tei import (
     GrobidClient,
     GrobidServiceError,
     IncompatibleGrobidVersionError,
+    TEIDocument,
 )
 
 
@@ -112,6 +113,91 @@ def test_process_fulltext_service_error_and_missing_file(tmp_path: Path) -> None
     ):
         with pytest.raises(GrobidServiceError, match="processing failed"):
             client.process_fulltext(pdf)
+
+
+def test_process_citation_posts_form_and_returns_parseable_tei() -> None:
+    citation_xml = (
+        b"<biblStruct><analytic><title/><author><persName "
+        b'xmlns="http://www.tei-c.org/ns/1.0"><surname>Graff</surname>'
+        b'</persName></author></analytic><monogr><title level="j">'
+        b"Expert. Opin. Ther. Targets</title><imprint>"
+        b'<biblScope unit="volume">6</biblScope>'
+        b'<biblScope unit="issue">1</biblScope>'
+        b'<biblScope unit="page" from="103" to="113"/>'
+        b'<date type="published" when="2002"/>'
+        b"</imprint></monogr></biblStruct>"
+    )
+    response = Mock(content=citation_xml)
+    client = GrobidClient(service_url="http://grobid.example/", timeout=25)
+
+    with patch("grobid_tei.client.requests.post", return_value=response) as post:
+        assert (
+            client.process_citation(
+                "Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113",
+                consolidate_citations=True,
+            )
+            == citation_xml
+        )
+
+    args, kwargs = post.call_args
+    assert args == ("http://grobid.example/api/processCitation",)
+    assert kwargs["data"] == {
+        "citations": "Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113",
+        "consolidateCitations": "1",
+    }
+    assert kwargs["headers"] == {"Accept": "application/xml"}
+    assert kwargs["timeout"] == 25.0
+
+    references = TEIDocument.from_bytes(citation_xml).references()
+    assert len(references) == 1
+    assert references[0]["author"] == "Graff,"
+    assert references[0]["journal"] == "Expert. Opin. Ther. Targets"
+    assert references[0]["year"] == "2002"
+    assert references[0]["pages"] == "103--113"
+
+
+def test_process_citation_defaults_to_no_consolidation() -> None:
+    client = GrobidClient(service_url="http://grobid.example")
+    response = Mock(content=b"<biblStruct/>")
+
+    with patch("grobid_tei.client.requests.post", return_value=response) as post:
+        client.process_citation("A. Author, A. Citation, 2024")
+
+    assert post.call_args.kwargs["data"]["consolidateCitations"] == "0"
+
+
+@pytest.mark.parametrize("citation", ["", " \t\n"])
+def test_process_citation_rejects_empty_input(citation: str) -> None:
+    client = GrobidClient(service_url="http://grobid.example")
+    with pytest.raises(ValueError, match="citation must be a non-empty string"):
+        client.process_citation(citation)
+
+
+@pytest.mark.parametrize("citation", [None, 42])
+def test_process_citation_rejects_non_string_input(citation: object) -> None:
+    client = GrobidClient(service_url="http://grobid.example")
+    with pytest.raises(TypeError, match="citation must be a non-empty string"):
+        client.process_citation(citation)  # type: ignore[arg-type]
+
+
+def test_process_citation_service_errors() -> None:
+    client = GrobidClient(service_url="http://grobid.example")
+    with (
+        patch(
+            "grobid_tei.client.requests.post",
+            side_effect=requests.ConnectionError("offline"),
+        ),
+        pytest.raises(GrobidServiceError, match="citation processing failed"),
+    ):
+        client.process_citation("A. Author, A. Citation, 2024")
+
+    response = Mock()
+    response.raise_for_status.side_effect = requests.HTTPError("503 unavailable")
+    with (
+        patch("grobid_tei.client.requests.post", return_value=response),
+        pytest.raises(GrobidServiceError, match="503 unavailable"),
+    ):
+        client.process_citation("A. Author, A. Citation, 2024")
 
 
 @pytest.mark.parametrize("url", ["", "localhost:8070", "ftp://example.org", "/api"])

@@ -43,10 +43,34 @@ Python 3.10-compatible syntax, and run the test suite. The copied TEI XML
 fixture is excluded from whitespace-fixing hooks so its source representation
 is preserved.
 
+## Start GROBID
+
+`grobid-tei` requires a reachable GROBID service. You can use a local GROBID
+installation or connect to a service hosted elsewhere; this package does not
+start or manage the service.
+
+### Convenient local option: Docker
+
+If Docker is installed, start the GROBID 0.9.1 service and publish its API port:
+
+```bash
+docker run -d --name grobid -p 8070:8070 grobid/grobid:0.9.1-full
+```
+
+GROBID may take a little while to initialize. Check that it is ready; repeat the
+check after a short wait if it does not return `true` yet:
+
+```bash
+curl http://localhost:8070/api/isalive
+```
+
+When running Python on the same host, use `http://localhost:8070` as the
+`GrobidClient` service URL. Stop the container when finished with
+`docker stop grobid`.
+
 ## Convert a PDF to TEI
 
-Start or otherwise provide a GROBID service yourself, then configure its full
-base URL explicitly:
+Once a GROBID service is available, configure its base URL explicitly:
 
 ```python
 from pathlib import Path
@@ -70,6 +94,38 @@ print(document.references(include_citation_counts=True))
 `process_fulltext` returns XML bytes. To enable GROBID consolidation explicitly,
 pass `consolidate_header=True` and/or `consolidate_citations=True`.
 
+## Parse a raw citation
+
+`process_citation` parses one bibliographical reference and returns TEI XML
+bytes, which can be read with `TEIDocument`:
+
+```python
+from grobid_tei import GrobidClient, TEIDocument
+
+client = GrobidClient(service_url="http://localhost:8070")
+citation_xml = client.process_citation(
+    "Venkatesh, V., Morris, M. G., Davis, G. B., & Davis, F. D. (2003). "
+    "User acceptance of information technology: Toward a unified view. "
+    "MIS Quarterly, 27(3), 425–478. https://doi.org/10.2307/30036540",
+    consolidate_citations=True,
+)
+citation_document = TEIDocument.from_bytes(citation_xml)
+reference = citation_document.references()[0]
+print(reference.fields)
+# Example result (GROBID's extracted fields may vary):
+# {
+#     "author": "Venkatesh, V. and Morris, M. G. and Davis, G. B. and Davis, F. D.",
+#     "title": "User acceptance of information technology: Toward a unified view",
+#     "year": "2003",
+#     "entrytype": "article",
+#     "journal": "MIS Quarterly",
+#     "volume": "27",
+#     "number": "3",
+#     "pages": "425--478",
+#     "doi": "10.2307/30036540",
+# }
+```
+
 ## Parse an existing TEI file
 
 No running GROBID service is needed to parse an existing file:
@@ -91,7 +147,8 @@ for paragraph in document.iter_paragraphs():
 ## Public API
 
 - `GrobidClient(service_url=..., timeout=180.0)` provides `is_available()`,
-  `version()`, optional `check_compatibility()`, and `process_fulltext(...)`.
+  `version()`, optional `check_compatibility()`, `process_fulltext(...)`, and
+  `process_citation(...)`.
   The compatibility check rejects known-incompatible versions and warns, but
   proceeds, for versions not yet tested with this package. It is not run
   automatically during processing. `IncompatibleGrobidVersionError` identifies

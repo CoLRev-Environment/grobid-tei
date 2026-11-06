@@ -112,3 +112,31 @@ class GrobidClient:
             ) from exc
 
         return response.content
+
+    def process_citation(
+        self, citation: str, *, consolidate_citations: bool = False
+    ) -> bytes:
+        """Parse one raw bibliographical citation and return TEI XML bytes."""
+        if not isinstance(citation, str):
+            raise TypeError("citation must be a non-empty string")
+        if not citation.strip():
+            raise ValueError("citation must be a non-empty string")
+
+        options = {
+            "citations": citation,
+            "consolidateCitations": "1" if consolidate_citations else "0",
+        }
+        try:
+            response = requests.post(
+                f"{self.service_url}/api/processCitation",
+                data=options,
+                headers={"Accept": "application/xml"},
+                timeout=self.timeout,
+            )
+            response.raise_for_status()
+        except requests.RequestException as exc:
+            raise GrobidServiceError(
+                f"GROBID citation processing failed at {self.service_url}: {exc}"
+            ) from exc
+
+        return response.content
