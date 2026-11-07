@@ -101,20 +101,23 @@ def test_version_errors_are_package_exceptions() -> None:
             client.version()
 
 
-def test_compatibility_check_accepts_tested_version_without_warning() -> None:
+@pytest.mark.parametrize("version", ["0.8.2", "0.9.0"])
+def test_compatibility_check_accepts_tested_version_without_warning(
+    version: str,
+) -> None:
     client = GrobidClient(service_url="http://grobid.example", skip_version=True)
-    with patch.object(client, "version", return_value="0.8.2"):
+    with patch.object(client, "version", return_value=version):
         with warnings.catch_warnings(record=True) as recorded:
             warnings.simplefilter("always")
-            assert client.check_compatibility() == "0.8.2"
+            assert client.check_compatibility() == version
     assert not recorded
 
 
 def test_compatibility_check_warns_but_allows_untested_version() -> None:
     client = GrobidClient(service_url="http://grobid.example", skip_version=True)
-    with patch.object(client, "version", return_value="0.9.0"):
+    with patch.object(client, "version", return_value="0.9.1"):
         with pytest.warns(UserWarning, match="has not been tested"):
-            assert client.check_compatibility() == "0.9.0"
+            assert client.check_compatibility() == "0.9.1"
 
 
 def test_compatibility_check_rejects_known_incompatible_version(monkeypatch) -> None:

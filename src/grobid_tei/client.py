@@ -12,7 +12,7 @@ import requests
 
 from grobid_tei.exceptions import GrobidServiceError, IncompatibleGrobidVersionError
 
-_TESTED_GROBID_VERSIONS = frozenset({"0.8.2"})
+_TESTED_GROBID_VERSIONS = frozenset({"0.8.2", "0.9.0"})
 _INCOMPATIBLE_GROBID_VERSIONS: frozenset[str] = frozenset()
 
 

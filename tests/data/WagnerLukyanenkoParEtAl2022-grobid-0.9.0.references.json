@@ -1,0 +1,1441 @@
+{
+  "b0": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Adams, C. E and Polzmacher, S. and Wolff, A.",
+      "title": "Systematic reviews: work that needs to be done and not to be done",
+      "year": "2013",
+      "pages": "232--235",
+      "number": "4",
+      "volume": "6",
+      "entrytype": "article",
+      "journal": "Journal of Evidence-Based Medicine"
+    }
+  },
+  "b1": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Alter, S.",
+      "title": "Architecture of Sysperanto: a model-based ontology of the is field",
+      "year": "2005",
+      "pages": "1--40",
+      "number": "1",
+      "volume": "15",
+      "entrytype": "article",
+      "journal": "Communications of the Association for Information Systems"
+    }
+  },
+  "b2": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Alvesson, M. and Sandberg, J.",
+      "title": "Generating research questions through problematization",
+      "year": "2011",
+      "pages": "247--271",
+      "number": "2",
+      "volume": "36",
+      "entrytype": "article",
+      "journal": "Academy of Management Review"
+    }
+  },
+  "b3": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Al-Zubidy, A. and Carver, J. C and Hale, D. P",
+      "title": "Vision for SLR tooling infrastructure: prioritizing value-added requirements",
+      "year": "2017",
+      "pages": "72--81",
+      "volume": "91",
+      "entrytype": "article",
+      "journal": "Information and Software Technology"
+    }
+  },
+  "b4": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Anderson, M. R and Antenucci, D. and Bittorf, V.",
+      "title": "Brainwash: a data system for feature engineering",
+      "year": "2013",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the biennial conference on innovative data systems research"
+    }
+  },
+  "b5": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Antons, D. and Breidbach, C. F",
+      "title": "Big data, big insights? Advancing service innovation and design with machine learning",
+      "year": "2017",
+      "pages": "17--39",
+      "number": "1",
+      "volume": "21",
+      "entrytype": "article",
+      "journal": "Journal of Service Research"
+    }
+  },
+  "b6": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Antons, D. and Breidbach, C. F and Joshi, A. M",
+      "title": "Computational literature reviews: method, algorithms, and roadmap",
+      "year": "2021",
+      "pages": "1094428121991230",
+      "entrytype": "article",
+      "journal": "Organizational Research Methods"
+    }
+  },
+  "b7": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Avison, D. and Malaurent, J.",
+      "title": "Is theory king?: questioning the theory fetish in Information Systems",
+      "year": "2014",
+      "pages": "327--336",
+      "number": "4",
+      "volume": "29",
+      "entrytype": "article",
+      "journal": "Journal of Information Technology"
+    }
+  },
+  "b8": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Balducci, B. and Marinova, D.",
+      "title": "Unstructured data in marketing",
+      "year": "2018",
+      "pages": "557--590",
+      "number": "4",
+      "volume": "46",
+      "entrytype": "article",
+      "journal": "Journal of the Academy of Marketing Science"
+    }
+  },
+  "b9": {
+    "in_text_citation_count": 0,
+    "fields": {
+      "author": "Bandara, W. and Furtmueller, E. and Gorbacheva, E.",
+      "title": "Achieving rigour in literature reviews: insights from qualitative data analysis and tool-support",
+      "year": "2015",
+      "pages": "154--204",
+      "number": "8",
+      "volume": "34",
+      "entrytype": "article",
+      "journal": "Communications of the Association for Information Systems"
+    }
+  },
+  "b10": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Batini, C. and Rula, A. and Scannapieco, M.",
+      "title": "From data quality to big data quality",
+      "year": "2015",
+      "pages": "60--82",
+      "number": "1",
+      "volume": "26",
+      "entrytype": "article",
+      "journal": "Journal of Database Management"
+    }
+  },
+  "b11": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Bax, L. and Yu, L-M and Ikeda, N.",
+      "title": "A systematic comparison of software dedicated to meta-analysis of causal studies",
+      "year": "2007",
+      "pages": "1--9",
+      "number": "1",
+      "volume": "7",
+      "entrytype": "article",
+      "journal": "BMC Medical Research Methodology"
+    }
+  },
+  "b12": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Beller, E. and Clark, J. and Tsafnat, G.",
+      "title": "Making progress with the automation of systematic reviews: principles of the International Collaboration for the Automation of Systematic Reviews (ICASR)",
+      "year": "2018",
+      "pages": "1--7",
+      "number": "1",
+      "volume": "7",
+      "entrytype": "article",
+      "journal": "Systematic Reviews"
+    }
+  },
+  "b13": {
+    "in_text_citation_count": 3,
+    "fields": {
+      "author": "Berente, N. and Seidel, S. and Safadi, H.",
+      "title": "Research commentarydata-driven computationally intensive theory development",
+      "year": "2019",
+      "pages": "50--64",
+      "number": "1",
+      "volume": "30",
+      "entrytype": "article",
+      "journal": "Information Systems Research"
+    }
+  },
+  "b14": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Boell, S. K and Wang, B.",
+      "title": "wwwlitbaskets.io, an IT artifact supporting exploratory literature searches for Information Systems research",
+      "year": "2019",
+      "pages": "8--12",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the Pacific Asia conference on information systems"
+    }
+  },
+  "b15": {
+    "in_text_citation_count": 3,
+    "fields": {
+      "author": "Boh, Burton-Jones A and Oborn, W. F and , E.",
+      "title": "Editor's Comments: advancing research transparency at MIS quarterly: a pluralistic approach",
+      "year": "2021",
+      "number": "2",
+      "volume": "45",
+      "entrytype": "article",
+      "journal": "MIS Quarterly"
+    }
+  },
+  "b16": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Carver, J. C and Hassler, E. and Hernandes, E.",
+      "title": "Identifying barriers to the systematic literature review process",
+      "year": "2013",
+      "entrytype": "inproceedings",
+      "booktitle": "International symposium on empirical software engineering and measurement"
+    }
+  },
+  "b17": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Castellanos, A. and Castillo, A. and Tremblay, M. C",
+      "title": "Improving machine learning performance using conceptual modeling",
+      "year": "2021",
+      "entrytype": "inproceedings",
+      "booktitle": "AAAI spring symposium: Combining machine learning with knowledge engineering"
+    }
+  },
+  "b18": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Castelvecchi, D.",
+      "title": "Can we open the black box of AI?",
+      "year": "2016",
+      "pages": "20--23",
+      "number": "7623",
+      "volume": "538",
+      "entrytype": "article",
+      "journal": "Nature"
+    }
+  },
+  "b19": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Choudhury, P. and Endres, Allen R and , M.",
+      "title": "Developing theory using machine learning methods",
+      "year": "2018",
+      "entrytype": "book"
+    }
+  },
+  "b20": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Cooper, H. M",
+      "title": "Organizing knowledge syntheses: a taxonomy of literature reviews",
+      "year": "1988",
+      "pages": "104--126",
+      "number": "1",
+      "volume": "1",
+      "entrytype": "article",
+      "journal": "Knowledge in Society"
+    }
+  },
+  "b21": {
+    "in_text_citation_count": 4,
+    "fields": {
+      "author": "Cram, W. A and Templier, M. and Templier, M.",
+      "title": "Re)considering the concept of literature review reproducibility",
+      "year": "2020",
+      "pages": "1103--1114",
+      "number": "5",
+      "volume": "21",
+      "entrytype": "article",
+      "journal": "Journal of the Association for Information Systems"
+    }
+  },
+  "b22": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Dalgali, A. and Crowston, K.",
+      "title": "Sharing open deep learning models",
+      "year": "2019",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the hawaii international conference on system sciences"
+    }
+  },
+  "b23": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Dang, Y. and Zhang, Y. and Chen, H.",
+      "title": "Arizona literature mapper: an integrated approach to monitor and analyze global bioterrorism research literature",
+      "year": "2009",
+      "pages": "1466--1485",
+      "number": "7",
+      "volume": "60",
+      "entrytype": "article",
+      "journal": "Journal of the American Society for Information Science and Technology"
+    }
+  },
+  "b24": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Dörpinghaus, J. and , Stefan A",
+      "title": "Knowledge extraction and applications utilizing context data in knowledge graphs",
+      "year": "2019",
+      "pages": "265--272",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the federated conference on computer science and information systems"
+    }
+  },
+  "b25": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Dubé, L. and Paré, G.",
+      "title": "Rigor in information systems positivist case research: current practices, trends, and recommendations",
+      "year": "2003",
+      "pages": "597--636",
+      "number": "4",
+      "volume": "27",
+      "entrytype": "article",
+      "journal": "MIS Quarterly"
+    }
+  },
+  "b26": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Duboue, P.",
+      "title": "The Art of Feature Engineering: Essentials for Machine Learning",
+      "year": "2020",
+      "entrytype": "book"
+    }
+  },
+  "b27": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Eisenstein, J.",
+      "title": "Introduction to Natural Language Processing",
+      "year": "2019",
+      "entrytype": "book"
+    }
+  },
+  "b28": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Endicott, J. and Larsen, K. and Lukyanenko, R.",
+      "title": "Integrating scientific research: Theory and design of discovering similar constructs",
+      "year": "2017",
+      "pages": "1--7",
+      "entrytype": "inproceedings",
+      "booktitle": "AIS SIGSAND Symposium"
+    }
+  },
+  "b29": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Evans, J. A and Foster, J. G",
+      "title": "Metaknowledge",
+      "year": "2011",
+      "pages": "721--725",
+      "number": "11",
+      "volume": "331",
+      "entrytype": "article",
+      "journal": "Science"
+    }
+  },
+  "b30": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Germonprez, M. and Hovorka, D. and Hovorka, D.",
+      "title": "A theory of tailorable technology design",
+      "year": "2007",
+      "pages": "351--367",
+      "number": "6",
+      "volume": "8",
+      "entrytype": "article",
+      "journal": "Journal of the Association for Information Systems"
+    }
+  },
+  "b31": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Gleasure, R.",
+      "title": "Conceptual design science research? How and why untested meta-artifacts have a place in IS",
+      "year": "2014",
+      "pages": "99--114",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the international conference on design science research in information systems and technology"
+    }
+  },
+  "b32": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Goodfellow, I. and Bengio, Y. and Courville, A.",
+      "title": "Deep Learning, Adaptive Computation and Machine Learning Series",
+      "year": "2016",
+      "entrytype": "inproceedings",
+      "booktitle": "Deep Learning, Adaptive Computation and Machine Learning Series"
+    }
+  },
+  "b33": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Gunning, D. and Aha, D.",
+      "title": "DARPA's Explainable Artificial Intelligence (XAI) Program",
+      "year": "2019",
+      "pages": "44--58",
+      "number": "2",
+      "volume": "40",
+      "entrytype": "article",
+      "journal": "AI Magazine"
+    }
+  },
+  "b34": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Hake, P. and Fettke, P. and Neumann, G.",
+      "title": "Extracting business objects and activities from labels of German process models",
+      "year": "2017",
+      "pages": "21--38",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the international conference on design science research in information system and technology"
+    }
+  },
+  "b35": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Harrison, H. and Griffin, S. J and Kuhn, I.",
+      "title": "Software tools to support title and abstract screening for systematic reviews in healthcare: an evaluation",
+      "year": "2020",
+      "pages": "1--12",
+      "number": "7",
+      "volume": "20",
+      "entrytype": "article",
+      "journal": "BMC Medical Research Methodology"
+    }
+  },
+  "b36": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Hartling, L. and Ospina, M. and Liang, Y.",
+      "title": "Risk of bias versus quality assessment of randomised controlled trials: cross sectional study",
+      "year": "2009",
+      "pages": "1--6",
+      "number": "1",
+      "volume": "339",
+      "entrytype": "article",
+      "journal": "British Medical Journal"
+    }
+  },
+  "b37": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Hassan, N. R and Prester, J. and Wagner, G.",
+      "title": "Seeking out clear and unique Information Systems Concepts: a natural language processing approach",
+      "year": "2020",
+      "pages": "15--17",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the European conference on information systems"
+    }
+  },
+  "b38": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Higgins, Jpt and Green, S.",
+      "title": "Cochrane Handbook for Systematic Reviews of Interventions",
+      "year": "2008",
+      "entrytype": "book"
+    }
+  },
+  "b39": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Holzinger, A.",
+      "title": "Interactive machine learning for health informatics: when do we need the human-in-the-loop?",
+      "year": "2016",
+      "pages": "119--131",
+      "number": "2",
+      "volume": "3",
+      "entrytype": "article",
+      "journal": "Brain Informatics"
+    }
+  },
+  "b40": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Hossain, M. S and Gresock, J. and Edmonds, Y.",
+      "title": "Connecting the dots between PubMed abstracts",
+      "year": "2012",
+      "pages": "1--23",
+      "number": "1",
+      "volume": "7",
+      "entrytype": "article",
+      "journal": "PLoS One"
+    }
+  },
+  "b41": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Hunter, J. E and Schmidt, F. L",
+      "title": "Methods of Meta-Analysis: Correcting Error and Bias in Research Findings",
+      "year": "2014",
+      "entrytype": "book"
+    }
+  },
+  "b42": {
+    "in_text_citation_count": 0,
+    "fields": {
+      "author": "Hutson, M.",
+      "title": "a) Has artificial intelligence become alchemy?",
+      "year": "2018",
+      "pages": "478--479",
+      "number": "6388",
+      "volume": "360",
+      "entrytype": "article",
+      "journal": "Science"
+    }
+  },
+  "b43": {
+    "in_text_citation_count": 0,
+    "fields": {
+      "author": "Hutson, M.",
+      "title": "Artificial intelligence faces reproducibility crisis",
+      "year": "2018",
+      "pages": "725--726",
+      "number": "6377",
+      "volume": "359",
+      "entrytype": "article",
+      "journal": "Science"
+    }
+  },
+  "b44": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Jalali, S. and Wohlin, C.",
+      "title": "Systematic literature studies: database searches vs. backward snowballing",
+      "year": "2012",
+      "pages": "29--38",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the ACM-IEEE international symposium on empirical software engineering and measurement"
+    }
+  },
+  "b45": {
+    "in_text_citation_count": 4,
+    "fields": {
+      "author": "Johnson, C. D and Bauer, B. C and Niederman, F.",
+      "title": "The Automation of Management and Business Science",
+      "year": "2019",
+      "pages": "292--309",
+      "number": "2",
+      "volume": "35",
+      "entrytype": "article",
+      "journal": "Academy of Management Perspectives"
+    }
+  },
+  "b46": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Jones, M.",
+      "title": "How do we address the reproducibility crisis in artificial intelligence? Forbes",
+      "year": "2018",
+      "entrytype": "book"
+    }
+  },
+  "b47": {
+    "in_text_citation_count": 3,
+    "fields": {
+      "author": "Jonnalagadda, S. R and Goyal, P. and Huffman, M. D",
+      "title": "Automating data extraction in systematic reviews: a systematic review",
+      "year": "2015",
+      "pages": "78",
+      "number": "1",
+      "volume": "4",
+      "entrytype": "article",
+      "journal": "Systematic Reviews"
+    }
+  },
+  "b48": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Kallinikos, J. and Tempini, N.",
+      "title": "Patient data as medical facts: social media practices as a foundation for medical knowledge creation",
+      "year": "2014",
+      "pages": "817--833",
+      "number": "4",
+      "volume": "25",
+      "entrytype": "article",
+      "journal": "Information Systems Research"
+    }
+  },
+  "b49": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Kenett, R. S and Shmueli, G.",
+      "title": "Information Quality: The Potential of Data and Analytics to Generate Knowledge",
+      "year": "2016",
+      "entrytype": "book"
+    }
+  },
+  "b50": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "King, R. D and Rowland, J. and Oliver, S. G",
+      "title": "The automation of science",
+      "year": "2009",
+      "pages": "85--89",
+      "volume": "324",
+      "entrytype": "article",
+      "journal": "Science"
+    }
+  },
+  "b51": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Kitchenham, B. A and Charters, S.",
+      "title": "Guidelines for performing systematic literature reviews in software engineering",
+      "year": "2007",
+      "entrytype": "book"
+    }
+  },
+  "b52": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Klein, H. K and Myers, M. D",
+      "title": "A set of principles for conducting and evaluating interpretive field studies in information systems",
+      "year": "1999",
+      "pages": "67--94",
+      "number": "1",
+      "volume": "23",
+      "entrytype": "article",
+      "journal": "MIS Quarterly"
+    }
+  },
+  "b53": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Knight, W.",
+      "title": "Darpa Is Funding Projects that Will Try to Open up AI's Black Boxes",
+      "year": "2017",
+      "entrytype": "book"
+    }
+  },
+  "b54": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Kobayashi, V. B and Mol, S. T and Berkers, H. A",
+      "title": "Text mining in organizational research",
+      "year": "2017",
+      "pages": "733--765",
+      "number": "3",
+      "volume": "21",
+      "entrytype": "article",
+      "journal": "Organizational Research Methods"
+    }
+  },
+  "b55": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Kohl, C. and Mcintosh, E. J and Unger, S.",
+      "title": "Online tools supporting the conduct and reporting of systematic reviews and systematic maps: a case study on cadima and review of existing tools",
+      "year": "2018",
+      "pages": "1--17",
+      "number": "8",
+      "volume": "7",
+      "entrytype": "article",
+      "journal": "Environmental Evidence"
+    }
+  },
+  "b56": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Kruse, Chandra and Seidel, L. and Vom Brocke, S. and , J.",
+      "title": "Design archaeology: Generating design knowledge from real-world artifact design",
+      "year": "2019",
+      "pages": "32--45",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the International Conference on Design Science Research in Information Systems and Technology"
+    }
+  },
+  "b57": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Kunc, M. and Mortenson, M. J and Vidgen, R.",
+      "title": "A computational literature review of the field of system dynamics from 1974 to 2017",
+      "year": "2018",
+      "pages": "115--127",
+      "number": "2",
+      "volume": "12",
+      "entrytype": "article",
+      "journal": "Journal of Simulation"
+    }
+  },
+  "b58": {
+    "in_text_citation_count": 3,
+    "fields": {
+      "author": "Larsen, K. R and Bong, Bong Ch and , C. H",
+      "title": "A tool for addressing construct identity in literature reviews and meta-analyses",
+      "year": "2016",
+      "pages": "529--551",
+      "number": "3",
+      "volume": "40",
+      "entrytype": "article",
+      "journal": "MIS Quarterly"
+    }
+  },
+  "b59": {
+    "in_text_citation_count": 10,
+    "fields": {
+      "author": "Larsen, K. and Hovorka, D. and Dennis, A. R",
+      "title": "Understanding the elephant: the discourse approach to boundary identification and corpus construction for theory review articles",
+      "year": "2019",
+      "pages": "887--928",
+      "number": "7",
+      "volume": "20",
+      "entrytype": "article",
+      "journal": "Journal of the Association for Information Systems"
+    }
+  },
+  "b60": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Larsen, K. and Lukyanenko, R. and Muller, R.",
+      "title": "Validity in design science research",
+      "year": "2020",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the International Conference on Design Science Research in Information Systems and Technology"
+    }
+  },
+  "b61": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Laurell, C. and Sandström, C. and Berthold, A.",
+      "title": "Exploring barriers to adoption of virtual reality through social media analytics and machine learning-an assessment of technology, network, price and trialability",
+      "year": "2019",
+      "pages": "469--474",
+      "volume": "100",
+      "entrytype": "article",
+      "journal": "Journal of Business Research"
+    }
+  },
+  "b62": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Leidner, D. E",
+      "title": "Review and theory symbiosis: an introspective retrospective",
+      "year": "2018",
+      "pages": "552--567",
+      "number": "6",
+      "volume": "19",
+      "entrytype": "article",
+      "journal": "Journal of the Association for Information Systems"
+    }
+  },
+  "b63": {
+    "in_text_citation_count": 7,
+    "fields": {
+      "author": "Li, J. and Larsen, K. and Abbasi, A.",
+      "title": "TheoryOn: a design framework and system for unlocking behavioral knowledge through ontology learning",
+      "year": "2020",
+      "pages": "1733--1772",
+      "number": "4",
+      "volume": "44",
+      "entrytype": "article",
+      "journal": "MIS Quarterly"
+    }
+  },
+  "b64": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Lindberg, A.",
+      "title": "Developing theory through integrating human and machine pattern recognition",
+      "year": "2020",
+      "pages": "90--116",
+      "number": "1",
+      "volume": "21",
+      "entrytype": "article",
+      "journal": "Journal of the Association for Information Systems"
+    }
+  },
+  "b65": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Lindzey, G. and Gilbert, D. and St, Fiske",
+      "title": "The Handbook of Social Psychology",
+      "year": "1998",
+      "entrytype": "inproceedings",
+      "booktitle": "The Handbook of Social Psychology"
+    }
+  },
+  "b66": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Lukyanenko, R.",
+      "title": "A journey to BSO: evaluating earlier and more recent ideas of Mario Bunge as a foundation for information and software development",
+      "year": "2020",
+      "pages": "1--15",
+      "entrytype": "inproceedings",
+      "booktitle": "Exploring Modeling Methods for Systems Analysis and Development"
+    }
+  },
+  "b67": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Lukyanenko, R. and Parsons, J. and Parsons, J.",
+      "title": "Research perspectives: design theory indeterminacy: what Is it, how can it be reduced, and why did the polar bear drown?",
+      "year": "2020",
+      "pages": "1343--1369",
+      "number": "5",
+      "volume": "21",
+      "entrytype": "article",
+      "journal": "Journal of the Association for Information Systems"
+    }
+  },
+  "b68": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Lukyanenko, R. and Parsons, J. and Wiersma, Y. F",
+      "title": "Expecting the unexpected: effects of data collection design choices on the quality of crowdsourced user-generated content",
+      "year": "2019",
+      "pages": "623--648",
+      "number": "2",
+      "volume": "43",
+      "entrytype": "article",
+      "journal": "MIS Quarterly"
+    }
+  },
+  "b69": {
+    "in_text_citation_count": 3,
+    "fields": {
+      "author": "Maass, W. and Parsons, J. and Purao, S.",
+      "title": "Data-driven meets theory-driven research in the era of big data: opportunities and challenges for Information Systems research",
+      "year": "2018",
+      "pages": "1253--1273",
+      "number": "12",
+      "volume": "19",
+      "entrytype": "article",
+      "journal": "Journal of the Association for Information Systems"
+    }
+  },
+  "b70": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Manning, C. D and Schütze, H.",
+      "title": "Foundations of Statistical Natural Language Processing",
+      "year": "1999",
+      "entrytype": "book"
+    }
+  },
+  "b71": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "March, S. T and Gn, Allen",
+      "title": "Toward a social ontology for conceptual modeling",
+      "year": "2014",
+      "pages": "1347--1359",
+      "number": "70",
+      "volume": "34",
+      "entrytype": "article",
+      "journal": "Communications of the Association for Information Systems"
+    }
+  },
+  "b72": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Marshall, I. J and Wallace, B. C",
+      "title": "Toward systematic review automation: a practical guide to using machine learning tools in research synthesis",
+      "year": "2019",
+      "pages": "163",
+      "number": "1",
+      "volume": "8",
+      "entrytype": "article",
+      "journal": "Systematic Reviews"
+    }
+  },
+  "b73": {
+    "in_text_citation_count": 3,
+    "fields": {
+      "author": "Marshall, I. J and Kuiper, J. and Bc, Wallace",
+      "title": "RobotReviewer: evaluation of a system for automatically assessing bias in clinical trials",
+      "year": "2015",
+      "pages": "193--201",
+      "number": "1",
+      "volume": "23",
+      "entrytype": "article",
+      "journal": "Journal of the American Medical Informatics Association"
+    }
+  },
+  "b74": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Mitchell, T. M",
+      "title": "Machine learning",
+      "year": "1997",
+      "pages": "870--877",
+      "volume": "45",
+      "entrytype": "book"
+    }
+  },
+  "b75": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Mortenson, M. J and Vidgen, R.",
+      "title": "A computational literature review of the technology acceptance model",
+      "year": "2016",
+      "pages": "1248--1259",
+      "number": "6",
+      "volume": "36",
+      "entrytype": "article",
+      "journal": "International Journal of Information Management"
+    }
+  },
+  "b76": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Müller-Bloch, C. and Kranz, J.",
+      "title": "A framework for rigorously identifying research gaps in qualitative literature reviews",
+      "year": "2015",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the international conference on information systems"
+    }
+  },
+  "b77": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Nakagawa, S. and Samarasinghe, G. and Haddaway, N. R",
+      "title": "Research weaving: visualizing the future of research synthesis",
+      "year": "2019",
+      "pages": "224--238",
+      "number": "3",
+      "volume": "34",
+      "entrytype": "article",
+      "journal": "Trends in Ecology & Evolution"
+    }
+  },
+  "b78": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Nelson, L. K",
+      "title": "Computational grounded theory: a methodological framework",
+      "year": "2020",
+      "pages": "3--42",
+      "number": "1",
+      "volume": "49",
+      "entrytype": "article",
+      "journal": "Sociological Methods & Research"
+    }
+  },
+  "b79": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "O'connor, A. M and Tsafnat, G. and Gilbert, S. B",
+      "title": "Moving toward the automation of the systematic review process: a summary of discussions at the second meeting of the International Collaboration for the Automation of Systematic Reviews (ICASR)",
+      "year": "2018",
+      "pages": "1--5",
+      "number": "3",
+      "volume": "7",
+      "entrytype": "article",
+      "journal": "Systematic Reviews"
+    }
+  },
+  "b80": {
+    "in_text_citation_count": 4,
+    "fields": {
+      "author": "O'mara-Eves, A. and Thomas, J. and Mcnaught, J.",
+      "title": "Using text mining for study identification in systematic reviews: a systematic review of current approaches",
+      "year": "2015",
+      "volume": "4",
+      "entrytype": "article",
+      "journal": "Systematic Reviews"
+    }
+  },
+  "b81": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Papaioannou, D. and Sutton, A. and Carroll, C.",
+      "title": "Literature searching for social science systematic reviews: consideration of a range of search techniques",
+      "year": "2009",
+      "pages": "114--122",
+      "number": "2",
+      "volume": "27",
+      "entrytype": "article",
+      "journal": "Health Information & Libraries Journal"
+    }
+  },
+  "b82": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Paré, G. and Cameron, A-F and Poba-Nzaou, P.",
+      "title": "A systematic assessment of rigor in information systems ranking-type Delphi studies",
+      "year": "2013",
+      "pages": "207--217",
+      "number": "5",
+      "volume": "50",
+      "entrytype": "article",
+      "journal": "Information & Management"
+    }
+  },
+  "b83": {
+    "in_text_citation_count": 3,
+    "fields": {
+      "author": "Paré, G. and Tate, M. and Johnstone, D.",
+      "title": "Contextualizing the twin concepts of systematicity and transparency in information systems literature reviews",
+      "year": "2016",
+      "pages": "493--508",
+      "number": "6",
+      "volume": "25",
+      "entrytype": "article",
+      "journal": "European Journal of Information Systems"
+    }
+  },
+  "b84": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Pinsonneault, A. and Kraemer, K.",
+      "title": "Survey research methodology in management information systems: an assessment",
+      "year": "1993",
+      "pages": "75--105",
+      "number": "2",
+      "volume": "10",
+      "entrytype": "article",
+      "journal": "Journal of Management Information Systems"
+    }
+  },
+  "b85": {
+    "in_text_citation_count": 3,
+    "fields": {
+      "author": "Prester, J. and Wagner, G. and Schryen, G.",
+      "title": "Classifying the ideational impact of Information Systems review articles: a content-enriched deep learning approach",
+      "year": "2020",
+      "pages": "113432",
+      "volume": "140",
+      "entrytype": "article",
+      "journal": "Decision Support Systems"
+    }
+  },
+  "b86": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Raganato, A. and Bovi, C. D and Navigli, R.",
+      "title": "Neural sequence learning models for word sense disambiguation",
+      "year": "2017",
+      "pages": "1156--1167",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the conference on empirical methods in natural language processing"
+    }
+  },
+  "b87": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Rai, A.",
+      "title": "Editor's comments: synergies between big data and theory",
+      "year": "2016",
+      "number": "2",
+      "volume": "40",
+      "entrytype": "article",
+      "journal": "MIS Quarterly"
+    }
+  },
+  "b88": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Raisch, S. and Krakowski, S.",
+      "title": "Artificial intelligence and management: the automation-augmentation paradox",
+      "year": "2020",
+      "pages": "192--210",
+      "number": "1",
+      "volume": "46",
+      "entrytype": "article",
+      "journal": "Academy of Management Review"
+    }
+  },
+  "b89": {
+    "in_text_citation_count": 3,
+    "fields": {
+      "author": "Rivard, S.",
+      "title": "Editor's comments: the ions of theory construction",
+      "year": "2014",
+      "number": "2",
+      "volume": "38",
+      "entrytype": "article",
+      "journal": "MIS Quarterly"
+    }
+  },
+  "b90": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Russell, S. J and Norvig, P.",
+      "title": "Artificial Intelligence: A Modern Approach",
+      "year": "2016",
+      "entrytype": "book"
+    }
+  },
+  "b91": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Shokraneh, Russell-Rose T And and , F.",
+      "title": "2Dsearch: Facilitating reproducible and valid searching in evidence synthesis",
+      "year": "2019",
+      "pages": "A36",
+      "number": "Suppl 1",
+      "volume": "24",
+      "entrytype": "article",
+      "journal": "BMJ Evidence-Based Medicine"
+    }
+  },
+  "b92": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Schmiedel, T. and Müller, O. and Vom Brocke, J.",
+      "title": "Topic modeling as a strategy of inquiry in organizational research: A tutorial with an application example on organizational culture",
+      "year": "2019",
+      "pages": "941--968",
+      "number": "4",
+      "volume": "22",
+      "entrytype": "article",
+      "journal": "Organizational Research Methods"
+    }
+  },
+  "b93": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Schryen, G. and Wagner, G. and Benlian, A.",
+      "title": "A knowledge development perspective on literature reviews: validation of a new typology in the IS field",
+      "year": "2020",
+      "pages": "134--168",
+      "volume": "46",
+      "entrytype": "article",
+      "journal": "Communications of the Association for Information Systems"
+    }
+  },
+  "b94": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Seeber, I. and Bittner, E. and Briggs, R. O",
+      "title": "Machines as teammates: a research agenda on AI in team collaboration",
+      "year": "2020",
+      "pages": "1--22",
+      "number": "2",
+      "volume": "57",
+      "entrytype": "article",
+      "journal": "Information & Management"
+    }
+  },
+  "b95": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Shamliyan, T. and Kane, R. L and Dickinson, S.",
+      "title": "A systematic review of tools used to assess the quality of observational studies that examine incidence or prevalence and risk factors for diseases",
+      "year": "2010",
+      "pages": "1061--1070",
+      "number": "10",
+      "volume": "63",
+      "entrytype": "article",
+      "journal": "Journal of Clinical Epidemiology"
+    }
+  },
+  "b96": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Sidorova, A. and Evangelopoulos, N. and Valacich, J. S",
+      "title": "Uncovering the intellectual core of the information systems discipline",
+      "year": "2008",
+      "pages": "467--482",
+      "number": "3",
+      "volume": "32",
+      "entrytype": "article",
+      "journal": "MIS Quarterly"
+    }
+  },
+  "b97": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Small, H. G",
+      "title": "Cited documents as concept symbols",
+      "year": "1978",
+      "pages": "327--340",
+      "number": "3",
+      "volume": "8",
+      "entrytype": "article",
+      "journal": "Social Studies of Science"
+    }
+  },
+  "b98": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Stanovsky, G. and Eckle-Kohler, J. and Puzikov, Y.",
+      "title": "Integrating deep linguistic features in factuality prediction over unified datasets",
+      "year": "2017",
+      "pages": "352--357",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the Annual Meeting of the Association for Computational Linguistics"
+    }
+  },
+  "b99": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Sturm, B. and Sunyaev, A.",
+      "title": "Design principles for systematic search systems: a holistic synthesis of a rigorous multi-cycle design science research journey",
+      "year": "2018",
+      "pages": "91--111",
+      "number": "1",
+      "volume": "61",
+      "entrytype": "article",
+      "journal": "Business & Information Systems Engineering"
+    }
+  },
+  "b100": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Swanson, D. R and Smalheiser, N. R",
+      "title": "An interactive system for finding complementary literatures: a stimulus to scientific discovery",
+      "year": "1997",
+      "pages": "183--203",
+      "number": "2",
+      "volume": "91",
+      "entrytype": "article",
+      "journal": "Artificial Intelligence"
+    }
+  },
+  "b101": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Tate, W. L and Ellram, L. M and Kirchoff, J. F",
+      "title": "Corporate social responsibility reports: a thematic analysis related to supply chain management",
+      "year": "2010",
+      "pages": "19--44",
+      "number": "1",
+      "volume": "46",
+      "entrytype": "article",
+      "journal": "Journal of Supply Chain Management"
+    }
+  },
+  "b102": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Taulli, T. and Oni, M.",
+      "title": "Artificial Intelligence Basics",
+      "year": "2019",
+      "entrytype": "inproceedings",
+      "booktitle": "Artificial Intelligence Basics"
+    }
+  },
+  "b103": {
+    "in_text_citation_count": 15,
+    "fields": {
+      "author": "Templier, M. and Paré, G.",
+      "title": "Transparency in literature reviews: an assessment of reporting practices across review types and genres in top IS journals",
+      "year": "2018",
+      "pages": "503--550",
+      "number": "5",
+      "volume": "27",
+      "entrytype": "article",
+      "journal": "European Journal of Information Systems"
+    }
+  },
+  "b104": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Thilakaratne, M. and Falkner, K. and Atapattu, T.",
+      "title": "A systematic review on literature-based discovery: general overview, methodology, & statistical analysis",
+      "year": "2019",
+      "pages": "1--34",
+      "number": "6",
+      "volume": "52",
+      "entrytype": "article",
+      "journal": "ACM Computing Surveys"
+    }
+  },
+  "b105": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Thomas, J. and Noel-Storr, A. and Marshall, I.",
+      "title": "Living systematic reviews: 2. Combining human and machine effort",
+      "year": "2017",
+      "pages": "31--37",
+      "volume": "91",
+      "entrytype": "article",
+      "journal": "Journal of Clinical Epidemiology"
+    }
+  },
+  "b106": {
+    "in_text_citation_count": 0,
+    "fields": {
+      "author": "Tkaczyk, D. and Collins, A. and Sheridan, P.",
+      "title": "Machine learning vs. Rules and out-of-the-box vs. retrained",
+      "year": "2018",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the ACM/IEEE on Joint Conference on Digital Libraries"
+    }
+  },
+  "b107": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Tremblay, M. C and Der Meer, Van and Beck, D. and , R.",
+      "title": "The effects of the quantification of faculty productivity: perspectives from the design science research community",
+      "year": "2018",
+      "pages": "625--661",
+      "volume": "43",
+      "entrytype": "article",
+      "journal": "Communications of the Association for Information Systems"
+    }
+  },
+  "b108": {
+    "in_text_citation_count": 5,
+    "fields": {
+      "author": "Tsafnat, G. and Glasziou, P. and Choong, M. K",
+      "title": "Systematic review automation technologies",
+      "year": "2014",
+      "pages": "1--15",
+      "volume": "3",
+      "entrytype": "article",
+      "journal": "Systematic Reviews"
+    }
+  },
+  "b109": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Van De Schoot, R. and De Bruin, J. and Schram, R.",
+      "title": "An open source machine learning framework for efficient and transparent systematic reviews",
+      "year": "2021",
+      "pages": "125--133",
+      "volume": "3",
+      "entrytype": "article",
+      "journal": "Nature Machine Intelligence"
+    }
+  },
+  "b110": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Van Dinter, R. and Tekinerdogan, B. and Catal, C.",
+      "title": "Automation of systematic literature reviews: a systematic literature review",
+      "year": "2021",
+      "pages": "106589",
+      "volume": "136",
+      "entrytype": "article",
+      "journal": "Information and Software Technology"
+    }
+  },
+  "b111": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Vom Brocke, J. and Simons, A. and Riemer, K.",
+      "title": "Standing on the shoulders of giants: challenges and recommendations of literature search in information systems research",
+      "year": "2015",
+      "pages": "205--224",
+      "number": "9",
+      "volume": "37",
+      "entrytype": "article",
+      "journal": "Communications of the Association for Information Systems"
+    }
+  },
+  "b112": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Wahyudi, A. and Kuk, G. and Janssen, M.",
+      "title": "A process pattern model for tackling and improving big data quality",
+      "year": "2018",
+      "pages": "457--469",
+      "number": "3",
+      "volume": "20",
+      "entrytype": "article",
+      "journal": "Information Systems Frontiers"
+    }
+  },
+  "b113": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Wallace, B. C and Small, K. and Brodley, C. E",
+      "title": "Deploying an interactive machine learning system in an evidence-based practice center: Abstrackr",
+      "year": "2012",
+      "pages": "819--824",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the ACM SIGHIT International Health Informatics Symposium"
+    }
+  },
+  "b114": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Wand, Y. and Weber, R.",
+      "title": "An ontological analysis of some fundamental information systems concepts",
+      "year": "1988",
+      "pages": "213--226",
+      "entrytype": "inproceedings",
+      "booktitle": "Proceedings of the International Conference on Information Systems"
+    }
+  },
+  "b115": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Wang, Z. and Nayfeh, T. and Tetzlaff, J.",
+      "title": "Error rates of human reviewers during abstract screening in systematic reviews",
+      "year": "2020",
+      "pages": "e0227742",
+      "number": "1",
+      "volume": "15",
+      "entrytype": "article",
+      "journal": "PLoS One"
+    }
+  },
+  "b116": {
+    "in_text_citation_count": 0,
+    "fields": {
+      "author": "Van Zoonen, W. and Der Meer, Van and , Tgla",
+      "title": "Social media research: the application of supervised machine learning in organizational communication research",
+      "year": "2016",
+      "pages": "132--141",
+      "volume": "63",
+      "entrytype": "article",
+      "journal": "Computers in Human Behavior"
+    }
+  },
+  "b117": {
+    "in_text_citation_count": 2,
+    "fields": {
+      "author": "Webster, J. and Watson, R. T",
+      "title": "Analyzing the past to prepare for the future: writing a literature review",
+      "year": "2002",
+      "number": "2",
+      "volume": "26",
+      "entrytype": "article",
+      "journal": "MIS Quarterly"
+    }
+  },
+  "b118": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Whetten, D. A",
+      "title": "What constitutes a theoretical contribution?",
+      "year": "1989",
+      "pages": "490--495",
+      "number": "4",
+      "volume": "14",
+      "entrytype": "article",
+      "journal": "Academy of Management Review"
+    }
+  },
+  "b119": {
+    "in_text_citation_count": 1,
+    "fields": {
+      "author": "Xu, J. and Benbasat, I. and Benbasat, I.",
+      "title": "Integrating service quality with system and information quality: an empirical test in the e-service context",
+      "year": "2013",
+      "pages": "777--794",
+      "number": "3",
+      "volume": "37",
+      "entrytype": "article",
+      "journal": "MIS Quarterly"
+    }
+  }
+}

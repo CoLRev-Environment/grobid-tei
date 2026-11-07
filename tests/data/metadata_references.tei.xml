@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt><title>Ignored title</title></titleStmt>
+      <publicationStmt><publisher>Example Press</publisher></publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <title>Focused Metadata (Completed paper)</title>
+            <author><persName><forename type="first">Alex</forename><surname>Example</surname></persName></author>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date when="2024-03-12" />
+              <biblScope unit="page" from="1" to="9" />
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1234/example</idno>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <p><ref type="bibr" target="#b-article">first</ref>
+         <ref type="bibr" target="#b-article">again</ref>
+         <ref type="bibr" target="#b-proceedings">once</ref></p>
+    </body>
+    <back>
+      <listBibl>
+        <biblStruct xml:id="b-article">
+          <analytic>
+            <title level="a">An article title</title>
+            <author><persName><forename type="first">J</forename><surname>Doe</surname></persName></author>
+            <idno type="DOI">10.5678/article</idno>
+          </analytic>
+          <monogr>
+            <title level="j">Journal of Examples</title>
+            <imprint>
+              <date when="2021-05-06" />
+              <biblScope unit="volume">12</biblScope>
+              <biblScope unit="issue">3</biblScope>
+              <biblScope unit="page" from="100" to="108" />
+            </imprint>
+          </monogr>
+        </biblStruct>
+        <biblStruct xml:id="b-book">
+          <monogr>
+            <title level="m">A Useful Book</title>
+            <author><persName><surname>Smith</surname></persName></author>
+            <imprint>
+              <date when="20x1" />
+              <biblScope unit="page" from="7" />
+            </imprint>
+          </monogr>
+        </biblStruct>
+        <biblStruct xml:id="b-proceedings">
+          <analytic><title level="a">A Conference Paper</title></analytic>
+          <monogr>
+            <title level="m">Proceedings of Example Conference</title>
+            <meeting>Example Conference</meeting>
+            <imprint>
+              <date when="2022" />
+              <biblScope unit="page">44-51</biblScope>
+            </imprint>
+          </monogr>
+        </biblStruct>
+        <biblStruct xml:id="b-partial">
+          <analytic><title level="a">A Partial Reference</title></analytic>
+          <monogr>
+            <imprint>
+              <date when="not-a-date" />
+              <biblScope unit="page" to="9" />
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </listBibl>
+    </back>
+  </text>
+</TEI>
